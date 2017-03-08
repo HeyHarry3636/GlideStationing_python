@@ -1,35 +1,33 @@
-# Cross-Sections (crossSections_05262016.py)
+# Glide Stationing (StructureStationing.py)
 ## Synopsis
 
-This [script] (crossSections_05262016.py) was developed to automate the process of drawing cross-sections through stream centerline using ArcGIS.  The cross-sections are perpendicular to the streamline while within the channels banks, then become perpendicular to the valley walls once out of the banks.
+This [script] (StructureStationing.py) was developed to create a two-dimensional profile of a three-dimensional survey for use in river restoration. Structure surveys need to be converted so that two-dimensional areas can be computed and related to regional curves.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=qSQw5f6VlWg
-" target="_blank"><img src="http://img.youtube.com/vi/qSQw5f6VlWg/0.jpg" 
-alt="CrossSections_python" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=kEC6D8w8mCE
+" target="_blank"><img src="http://img.youtube.com/vi/kEC6D8w8mCE/0.jpg" 
+alt="GlideStationing_python" width="240" height="180" border="10" /></a>
 
 ## Script Inputs
 
 *For the ArcGIS script execution, the following inputs are needed:*
-+ Stream centerline (route [M] enabled)
-+ Optional regional curve information relating drainage area to a bankfull width
-+ Digitized valley walls (left/right)
-+ Flow accumulation layer (derived in previous hydrologic processing of the DEM)
-
-This [cross-sections presentation] (CrossSectionsScript.pdf) is an overview of the script parameters and execution.
++ Workspace (file directory)
++ The original 3-dimensional structure points
++ The field used to differentiate to various glide structures
++ Default database location
 
 ## Motivation
 
-Previously, these cross-sections had to be manually digitized by the user in GIS, which took a while when you had a large watershed. The script I wrote significantly reduces the time to create these cross-sections throughout a watershed. Other scripts have performed a similar task, but I need my cross-sections to be perpendicular to the stream channel wihtin the channel banks, and perpendicular to the valley walls once out of the banks.
+River restoration's are constructed in 3-dimensions.  It is very difficult to perform a detailed 3-dimensional survey for the use in calculating appropriate metrics for construction.  Many of the structures used in river restoration need to be scaled to certain widths, depths, and areas.  It is easier to scale all of the 3-dimensional data into 2-dimesional so these various structures can be compared to each other. 
 
 ## Installation
 
-Download the [ArcToolbox and script (.zip file)] (CrossSections.zip) to try in ArcGIS.
+Download the [ArcToolbox] (StructureStationing.tbx) and [script] (StructureStationingScript.py) to try in ArcGIS. Make sure to save them in the same folder directory.
 
 ## Tests
 
 This script was developed and tested with ArcGIS 10.2, Python 2.7
 
-Python modules needed: *acrpy, math, sys, traceback*
+Python modules needed: *arcpy, pyodbc, shutil, os, time*
 
 ## Contributors
 
@@ -39,15 +37,12 @@ Michael Harris is the author of this script.
 
 [LinkedIN] (https://www.linkedin.com/in/michael-harris-366b0060/)
 
-## Acknowledgements
-
-Some code snippets and ideas were obtained from Mark Ellefson 'Classify Stream Type' script and 'Perpendicular Transects' script by Mateus Ferreira.
-
 ## License
 
-This code is available under the [MIT License.] (LICENSE.txt)
+This code is available under the [MIT License.] (LICENSE)
 
-<img src="XSinputs.png" width="240" height="180" border="10" />
-<img src="XSoutput.png" width="240" height="180" border="10" />
-<img src="XSwatershed.png" width="240" height="180" border="10" />
+<img src="2d-To-3d-Visual.png" width="240" height="180" border="10" />
+<img src="ScriptInterface.png" width="240" height="180" border="10" />
+<img src="OutputAttributeTable.png" width="240" height="180" border="10" />
+<img src="Export2d.png.png" width="240" height="180" border="10" />
 
