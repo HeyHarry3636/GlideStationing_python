@@ -1,7 +1,7 @@
-# Glide Stationing (StructureStationing.py)
+# Glide Stationing (StructureStationingScript.py)
 ## Synopsis
 
-This [script] (StructureStationing.py) was developed to create a two-dimensional profile of a three-dimensional survey for use in river restoration. Structure surveys need to be converted so that two-dimensional areas can be computed and related to regional curves.
+This [script] (StructureStationingScript.py) was developed to create a two-dimensional profile of a three-dimensional survey for use in river restoration. Structure surveys need to be converted so that two-dimensional areas can be computed and related to regional curves.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=kEC6D8w8mCE
 " target="_blank"><img src="http://img.youtube.com/vi/kEC6D8w8mCE/0.jpg" 
@@ -41,8 +41,8 @@ Michael Harris is the author of this script.
 
 This code is available under the [MIT License.] (LICENSE)
 
-<img src="2d-To-3d-Visual.png" width="240" height="180" border="10" />
-<img src="ScriptInterface.png" width="240" height="180" border="10" />
-<img src="OutputAttributeTable.png" width="240" height="180" border="10" />
-<img src="Export2d.png.png" width="240" height="180" border="10" />
+<img src="2d-To-3d-Visual.PNG" width="240" height="180" border="10" />
+<img src="ScriptInterface.PNG" width="240" height="180" border="10" />
+<img src="OutputAttributeTable.PNG" width="240" height="180" border="10" />
+<img src="Export2d.PNG" width="240" height="180" border="10" />
 
