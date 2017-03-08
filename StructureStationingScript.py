@@ -197,7 +197,7 @@ try:
     #Do your work in the cursor
     crsr = cnxn.cursor()
 
-    #Using a blank rivermorph file as a template
+    #Using a blank rvrmrph file as a template
     #Select full table from exportLoc and copy to rmpLoc (this SQL copies over all
     SQL0 = "SELECT * INTO tbStructure FROM structureStationing IN '{0}';".format(exportLoc)
     crsr.execute(SQL0)
@@ -263,12 +263,12 @@ try:
     #THIS NEEDS TO HAPPEN BEFORE I TRY WRITING TO THE RMX FILE BELOW
     cnxn.commit()
 
-    #Set export location for the .rmx file using in Rivermorph
+    #Set export location for the .rmx file
     newRMX = wrkSpace + r"\pythonExport.rmx" #r"D:\Users\miharris\Desktop\PYODBC\pythonExport.rmx"
 
     #Write/copy finished database to new .mdb or .rmx file using shutil library
     shutil.copyfile(rmpLoc, newRMX)
-    arcpy.AddMessage("The export .rmx (Rivermorph import/export file) has been saved here:\n " + wrkSpace)
+    arcpy.AddMessage("The export .rmx (Rmp import/export file) has been saved here:\n " + wrkSpace)
 
     #Delete all records from tables so that the original file can be used again
     SQLH = 'DELETE * FROM tbCrossSection'
