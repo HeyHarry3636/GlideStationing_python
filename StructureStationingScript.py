@@ -260,15 +260,8 @@ try:
     crsr.execute(SQLG)
 
     #You must commit your changes for them to save
-    #THIS NEEDS TO HAPPEN BEFORE I TRY WRITING TO THE RMX FILE BELOW
+    #THIS NEEDS TO HAPPEN BEFORE I TRY WRITING
     cnxn.commit()
-
-    #Set export location for the .rmx file
-    newRMX = wrkSpace + r"\pythonExport.rmx" #r"D:\Users\miharris\Desktop\PYODBC\pythonExport.rmx"
-
-    #Write/copy finished database to new .mdb or .rmx file using shutil library
-    shutil.copyfile(rmpLoc, newRMX)
-    arcpy.AddMessage("The export .rmx (Rmp import/export file) has been saved here:\n " + wrkSpace)
 
     #Delete all records from tables so that the original file can be used again
     SQLH = 'DELETE * FROM tbCrossSection'
@@ -286,28 +279,6 @@ try:
 
     arcpy.AddMessage("The script has completed successfully")
     print "Script has completed successfully"
-
-    #Exit ArcMap as it was causing errors having ArcMap open inbetween executions of this script
-    #Save current open map document
-    arcpy.AddMessage("Saving open MXD Document")
-    mxd = arcpy.mapping.MapDocument("CURRENT")
-    mxd.save()
-
-    #Prompt the user that ArcMap will close in
-    arcpy.AddMessage("ArcMap will close in 15 seconds")
-    print "ArcMap will close in 15 seconds"
-    time.sleep(10)
-
-    arcpy.AddMessage("ArcMap will close in 5 seconds")
-    print "ArcMap will close in 5 seconds"
-    time.sleep(5)
-
-    arcpy.AddMessage("ArcMap will close now")
-    print "ArcMap will close now"
-    time.sleep(2)
-
-    #Actually kill ArcMap.exe
-    os.system("TASKKILL /F /IM ArcMap.exe")
 
 
 except arcpy.ExecuteError:
